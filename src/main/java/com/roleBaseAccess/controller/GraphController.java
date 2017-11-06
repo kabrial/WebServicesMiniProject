@@ -1,7 +1,5 @@
 package com.roleBaseAccess.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.roleBaseAccess.model.EmployeeGraphSalaryName;
 import com.roleBaseAccess.model.User;
 import com.roleBaseAccess.service.EmployeeService;
 import com.roleBaseAccess.service.UserService;
@@ -45,10 +42,6 @@ public class GraphController {
     @GetMapping
     public String listAllSalaryGraph(Model model){
         
-        List<EmployeeGraphSalaryName> listEmployee = employeeService.findIdAndSalary();
-
-        model.addAttribute("listEmployee",listEmployee);
-        
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = ((UserDetails) authentication.getPrincipal()).getUsername();
         
@@ -69,10 +62,6 @@ public class GraphController {
      */
     @RequestMapping(value="/decile",  method={RequestMethod.GET})
     public String listAllSalaryPerDecile(Model model){
-        
-        List<EmployeeGraphSalaryName> listEmployee = employeeService.findIdAndSalary();
-
-        model.addAttribute("listEmployee",listEmployee);
         
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = ((UserDetails) authentication.getPrincipal()).getUsername();

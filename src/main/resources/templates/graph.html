@@ -34,6 +34,10 @@
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
+<!-- Jquery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+
 </head>
 <body>
 
@@ -62,17 +66,29 @@
 	      </nav>
     </header>
     
-	<input id="data" type="text" th:value="${listEmployee}" th:text="${listEmployee}">
 
 	
 	<br/>
 
 	<div id="chartdiv"></div>
+	
 <script>
-var siteUrl = '/api/dataEmployee';
 
-// element = document.getElementById('data').value;
-// alert(element.employeeId);
+    
+$.ajax({
+    type: "GET",
+    url: '/api/dataEmployee',
+    cache:false,
+    dataType :'json',
+    success: function(data){
+         //alert(data);   
+         //alert(data.employeeInformation[0].employeeId);       
+         alert("ici"+data.employeeInformation[0].employeeId);
+         alert("ici:"+data.employeeInformation[0].salary);
+   }
+});
+
+
 var graph = AmCharts.makeChart("chartdiv", {
   "type": "serial",
   "theme": "light",

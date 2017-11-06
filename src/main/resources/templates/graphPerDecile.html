@@ -18,6 +18,9 @@
         -ms-user-select: none;
     }
     </style>
+    
+    <!-- Jquery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 </head>
 <body>
 
@@ -51,37 +54,144 @@
     </div>
     <br>
     <br>
-    <button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
-    <button id="addData">Add Data</button>
-    <button id="removeData">Remove Data</button>
     
-    <input id="data" type="text" th:value="${listEmployee}" th:text="${listEmployee}">
     <script>
       
-        
-        var randomScalingFactor = function() {
-            return Math.round(Math.random() * 100);
+    
+        var getDataEmployee = function(i) {
+            $.ajax({
+                type: "GET",
+                url: '/api/dataEmployee',
+                cache:false,
+                dataType :'json',
+                success: function(data){
+                     //alert(data);   
+                     //alert(data.employeeInformation[0].employeeId);       
+                     //alert("ici"+data.employeeInformation[0].employeeId);
+                     //alert(data.employeeInformation[i].salary);
+                     return data.employeeInformation[i].salary;
+               }
+            });
         };
 
         var config = {
             type: 'line',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206"],
                 datasets: [{
                     label: "Salary per decile",
                     fill: false,
                     backgroundColor: window.chartColors.blue,
                     borderColor: window.chartColors.blue,
                     data: [
-                        randomScalingFactor(), 
-                        randomScalingFactor(), 
-                        randomScalingFactor(), 
-                        randomScalingFactor(), 
-                        randomScalingFactor(), 
-                        randomScalingFactor(), 
-                        randomScalingFactor()
+                        getDataEmployee(0),
+                        getDataEmployee(1),
+                        getDataEmployee(2),
+                        getDataEmployee(3),
+                        getDataEmployee(4),
+                        getDataEmployee(5),
+                        getDataEmployee(6),
+                        getDataEmployee(7),
+                        getDataEmployee(8),
+                        getDataEmployee(9),
+                        getDataEmployee(10),
+                        getDataEmployee(11), 
+                        getDataEmployee(12), 
+                        getDataEmployee(13), 
+                        getDataEmployee(14), 
+                        getDataEmployee(15), 
+                        getDataEmployee(16), 
+                        getDataEmployee(17), 
+                        getDataEmployee(18), 
+                        getDataEmployee(19), 
+                        getDataEmployee(20),
+                        getDataEmployee(21), 
+                        getDataEmployee(22), 
+                        getDataEmployee(23), 
+                        getDataEmployee(24), 
+                        getDataEmployee(25), 
+                        getDataEmployee(26), 
+                        getDataEmployee(27), 
+                        getDataEmployee(28), 
+                        getDataEmployee(29), 
+                        getDataEmployee(30),
+                        getDataEmployee(31), 
+                        getDataEmployee(32), 
+                        getDataEmployee(33), 
+                        getDataEmployee(34), 
+                        getDataEmployee(35), 
+                        getDataEmployee(36), 
+                        getDataEmployee(37), 
+                        getDataEmployee(38), 
+                        getDataEmployee(39), 
+                        getDataEmployee(40),
+                        getDataEmployee(41), 
+                        getDataEmployee(42), 
+                        getDataEmployee(43), 
+                        getDataEmployee(44), 
+                        getDataEmployee(45), 
+                        getDataEmployee(46), 
+                        getDataEmployee(47), 
+                        getDataEmployee(48), 
+                        getDataEmployee(49), 
+                        getDataEmployee(50),
+                        getDataEmployee(51), 
+                        getDataEmployee(52), 
+                        getDataEmployee(53), 
+                        getDataEmployee(54), 
+                        getDataEmployee(55), 
+                        getDataEmployee(56), 
+                        getDataEmployee(57), 
+                        getDataEmployee(58), 
+                        getDataEmployee(59), 
+                        getDataEmployee(60),
+                        getDataEmployee(61), 
+                        getDataEmployee(62), 
+                        getDataEmployee(63), 
+                        getDataEmployee(64), 
+                        getDataEmployee(65), 
+                        getDataEmployee(66), 
+                        getDataEmployee(67), 
+                        getDataEmployee(68), 
+                        getDataEmployee(69), 
+                        getDataEmployee(70),
+                        getDataEmployee(71), 
+                        getDataEmployee(72), 
+                        getDataEmployee(73), 
+                        getDataEmployee(74), 
+                        getDataEmployee(75), 
+                        getDataEmployee(76), 
+                        getDataEmployee(77), 
+                        getDataEmployee(78), 
+                        getDataEmployee(79), 
+                        getDataEmployee(80),
+                        getDataEmployee(81), 
+                        getDataEmployee(82), 
+                        getDataEmployee(83), 
+                        getDataEmployee(84), 
+                        getDataEmployee(85), 
+                        getDataEmployee(86), 
+                        getDataEmployee(87), 
+                        getDataEmployee(88), 
+                        getDataEmployee(89), 
+                        getDataEmployee(90),
+                        getDataEmployee(91), 
+                        getDataEmployee(92), 
+                        getDataEmployee(93), 
+                        getDataEmployee(94), 
+                        getDataEmployee(95), 
+                        getDataEmployee(96), 
+                        getDataEmployee(97), 
+                        getDataEmployee(98), 
+                        getDataEmployee(99), 
+                        getDataEmployee(100),
+                        getDataEmployee(101), 
+                        getDataEmployee(102), 
+                        getDataEmployee(103), 
+                        getDataEmployee(104), 
+                        getDataEmployee(105), 
+                        getDataEmployee(106), 
+                        getDataEmployee(107)
                     ],
                 }]
             },
@@ -104,7 +214,7 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Name Of Employee'
+                            labelString: 'Id Of Employee'
                         }
                     }],
                     yAxes: [{
@@ -115,10 +225,10 @@
                         },
                         ticks: {
                             min: 0,
-                            max: 100,
+                            max: 26000,
 
-                            // forces step size to be 5 units
-                            stepSize: 5
+                            // forces step size to be 1000 units
+                            stepSize: 1000
                         }
                     }]
                 }
@@ -130,63 +240,7 @@
             window.myLine = new Chart(ctx, config);
         };
 
-        document.getElementById('randomizeData').addEventListener('click', function() {
-            config.data.datasets.forEach(function(dataset) {
-                dataset.data = dataset.data.map(function() {
-                    return randomScalingFactor();
-                });
-            });
-
-            window.myLine.update();
-        });
-
-        var colorNames = Object.keys(window.chartColors);
-        document.getElementById('addDataset').addEventListener('click', function() {
-            var colorName = colorNames[config.data.datasets.length % colorNames.length];
-            var newColor = window.chartColors[colorName];
-            var newDataset = {
-                label: 'Dataset ' + config.data.datasets.length,
-                backgroundColor: newColor,
-                borderColor: newColor,
-                data: [],
-                fill: false
-            };
-
-            for (var index = 0; index < config.data.labels.length; ++index) {
-                newDataset.data.push(randomScalingFactor());
-            }
-
-            config.data.datasets.push(newDataset);
-            window.myLine.update();
-        });
-
-        document.getElementById('addData').addEventListener('click', function() {
-            if (config.data.datasets.length > 0) {
-                var month = MONTHS[config.data.labels.length % MONTHS.length];
-                config.data.labels.push(month);
-
-                config.data.datasets.forEach(function(dataset) {
-                    dataset.data.push(randomScalingFactor());
-                });
-
-                window.myLine.update();
-            }
-        });
-
-        document.getElementById('removeDataset').addEventListener('click', function() {
-            config.data.datasets.splice(0, 1);
-            window.myLine.update();
-        });
-
-        document.getElementById('removeData').addEventListener('click', function() {
-            config.data.labels.splice(-1, 1); // remove the label first
-
-            config.data.datasets.forEach(function(dataset, datasetIndex) {
-                dataset.data.pop();
-            });
-
-            window.myLine.update();
-        });
+        
 
     </script>
 
