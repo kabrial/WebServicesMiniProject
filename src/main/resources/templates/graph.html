@@ -1,0 +1,164 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Graph</title>
+
+<!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+<!-- Styles -->
+<style>
+#chartdiv {
+				width: 100%;
+				height: 500px;
+}
+
+.amcharts-export-menu-top-right {
+				top: 10px;
+				right: 0;
+}
+</style>
+
+<!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+</head>
+<body>
+
+<header>
+	      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	        <a class="navbar-brand" th:href="@{/}" >Home : <span th:text="*{userName}"></span>, Your role : <span th:text="*{userRole}"></span></a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarCollapse">
+	           <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/#ToMiddle}">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/#ToBottom}">Help</a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" th:href="@{/graph/decile}">Graph Per Decile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+            </ul>
+	        </div>
+	      </nav>
+    </header>
+    
+	<input id="data" type="text" th:value="${listEmployee}" th:text="${listEmployee}">
+
+	
+	<br/>
+
+	<div id="chartdiv"></div>
+<script>
+var siteUrl = '/api/dataEmployee';
+
+// element = document.getElementById('data').value;
+// alert(element.employeeId);
+var graph = AmCharts.makeChart("chartdiv", {
+  "type": "serial",
+  "theme": "light",
+  "marginRight": 70,
+  "dataProvider": [{
+    "country": "King Steven",
+    "salary": 24000,
+    "color": "#FF0F00"
+  }, {
+    "country": "Kochhar Neena",
+    "salary": 17000,
+    "color": "#FF6600"
+  }, {
+    "country": "De Haan Lex",
+    "salary": 17000,
+    "color": "#FF9E01"
+  }, {
+    "country": "Hunold Alexander",
+    "salary": 9000,
+    "color": "#FCD202"
+  }, {
+    "country": "Ernst Bruce",
+    "salary": 6000,
+    "color": "#F8FF01"
+  }, {
+    "country": "Austin David",
+    "salary": 4800,
+    "color": "#B0DE09"
+  }, {
+    "country": "Pataballa Valli",
+    "salary": 4800,
+    "color": "#04D215"
+  }, {
+    "country": "Lorentz Diana",
+    "salary": 4200,
+    "color": "#0D8ECF"
+  }, {
+    "country": "Greenberg Nancy",
+    "salary": 12000,
+    "color": "#0D52D1"
+  }, {
+    "country": "Faviet Daniel",
+    "salary": 9000,
+    "color": "#2A0CD0"
+  }, {
+    "country": "Chen John",
+    "salary": 8200,
+    "color": "#8A0CCF"
+  }, {
+    "country": "Sciarra Ismael",
+    "salary": 7700,
+    "color": "#CD0D74"
+  }],
+  "valueAxes": [{
+    "axisAlpha": 0,
+    "position": "left",
+    "title": "Salary"
+  }],
+  "startDuration": 1,
+  "graphs": [{
+    "balloonText": "<b>[[category]]: [[value]]</b>",
+    "fillColorsField": "color",
+    "fillAlphas": 0.9,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "salary"
+  }],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "country",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "labelRotation": 45
+  },
+  "export": {
+    "enabled": true
+  }
+
+});
+
+
+</script>
+
+</body>
+
+</html>

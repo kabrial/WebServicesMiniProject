@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" th:href="@{../images/ico.png}">
+
+    <title>Update Country</title>
+
+     <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+  </head>
+<body>
+	<header>
+	      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	        <a class="navbar-brand" th:href="@{/}" >Home : <span th:text="*{userName}"></span>, Your role : <span th:text="*{userRole}"></span></a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarCollapse">
+	          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/#ToMiddle}">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/#ToBottom}">Help</a>
+            </li>
+	        <li class="nav-item">
+	          <a class="nav-link" th:href="@{/country}">Country</a>
+	        </li>
+	         <li class="nav-item">
+              <a class="nav-link" th:href="@{/profil}">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+            </ul>
+	        </div>
+	      </nav>
+    </header>
+	<br/>
+	<div class="container marketing">
+		<br/>
+		<form class="form-horizontal" action="#"
+			th:action="@{'/employee/' + ${theEmployee.employeeId}}"
+			th:object="${theEmployee}" method="post">
+			
+			<label for="Name" class="col-sm-2 control-label">Firstname </label>
+				<input type="text" class="form-control" th:field="*{firstName}" required="required"/>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">Lastname </label>
+				<input type="text" class="form-control" th:field="*{lastName}" required="required"/>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">email </label>
+				<input type="text" class="form-control" th:field="*{email}" required="required"/>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">PhoneNumber </label>
+				<input type="text" class="form-control" th:field="*{phoneNumber}" required="required"/>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">Hire Date </label>
+				<input type="date" class="form-control" th:field="*{hireDate}" required="required"/>
+				<br/>
+				<label for="RegionId" class="col-sm-2 control-label">
+				Job Identifier </label><br/>
+				<select th:field="*{job.jobId}" required="required">
+    				<option th:each="jobIdList : ${listJob}" th:value="${{jobIdList.jobId}}" th:text="${jobIdList.jobId + ' : ' + jobIdList.jobTitle}"></option>
+				</select>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">Salary </label>
+				<input type="number" class="form-control" th:field="*{salary}" required="required"/>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">Commission PCT</label>
+				<input type="number" class="form-control" th:field="*{commissionPct}" required="required"/>
+				<br/>
+				<label for="Name" class="col-sm-2 control-label">Manager Identifier </label>
+				<input type="number" class="form-control" th:field="*{managerId}" required="required"/>
+				<br/>
+				<label for="RegionId" class="col-sm-2 control-label">
+				Department Identifier </label><br/>
+				<select th:field="*{department.departmentId}" required="required">
+    				<option th:each="departmentIdList : ${listDepartment}" th:value="${{departmentIdList.departmentId}}" th:text="${departmentIdList.departmentId + ' : ' + departmentIdList.departmentName}"></option>
+				</select>
+				<br/>
+				
+				
+				<br/><br/>
+			
+			<button class="btn btn-lg btn-primary btn-block"  type="Submit">Validate NOT WORK</button>
+		</form>
+	</div>
+
+</body>
+</html>
