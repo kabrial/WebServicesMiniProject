@@ -27,7 +27,7 @@
 
 <!-- Custom styles for this template -->
 <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
-<!-- Resources -->
+<!-- Resources graph -->
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
@@ -74,103 +74,509 @@
 	
 <script>
 
-    
 $.ajax({
     type: "GET",
     url: '/api/dataEmployee',
     cache:false,
     dataType :'json',
     success: function(data){
-         //alert(data);   
-         //alert(data.employeeInformation[0].employeeId);       
-         alert("ici"+data.employeeInformation[0].employeeId);
-         alert("ici:"+data.employeeInformation[0].salary);
+         var graph = AmCharts.makeChart("chartdiv", {
+             "type": "serial",
+             "theme": "light",
+             "marginRight": 70,
+             "dataProvider": [{
+               "id": data.employeeInformation[0].employeeId,
+               "salary": data.employeeInformation[0].salary,
+               "color": "#FF0F00"
+             }, {
+               "id": data.employeeInformation[1].employeeId,
+               "salary": data.employeeInformation[1].salary,
+               "color": "#FF6600"
+             }, {
+               "id": data.employeeInformation[2].employeeId,
+               "salary": data.employeeInformation[2].salary,
+               "color": "#FF9E01"
+             }, {
+               "id": data.employeeInformation[3].employeeId,
+               "salary": data.employeeInformation[3].salary,
+               "color": "#FCD202"
+             }, {
+               "id": data.employeeInformation[4].employeeId,
+               "salary": data.employeeInformation[4].salary,
+               "color": "#F8FF01"
+             }, {
+               "id": data.employeeInformation[5].employeeId,
+               "salary": data.employeeInformation[5].salary,
+               "color": "#B0DE09"
+             }, {
+               "id": data.employeeInformation[6].employeeId,
+               "salary": data.employeeInformation[6].salary,
+               "color": "#04D215"
+             }, {
+               "id": data.employeeInformation[7].employeeId,
+               "salary": data.employeeInformation[7].salary,
+               "color": "#0D8ECF"
+             }, {
+               "id": data.employeeInformation[8].employeeId,
+               "salary": data.employeeInformation[8].salary,
+               "color": "#0D52D1"
+             }, {
+               "id": data.employeeInformation[9].employeeId,
+               "salary": data.employeeInformation[9].salary,
+               "color": "#2A0CD0"
+             }, {
+               "id": data.employeeInformation[10].employeeId,
+               "salary": data.employeeInformation[10].salary,
+               "color": "#8A0CCF"
+             }, {
+               "id": data.employeeInformation[11].employeeId,
+               "salary": data.employeeInformation[11].salary,
+               "color": "#CD0D74"
+             },
+             
+             
+             
+              {
+                 "id": data.employeeInformation[12].employeeId,
+                 "salary": data.employeeInformation[12].salary,
+                 "color": "#FF6600"
+               }, {
+                 "id": data.employeeInformation[13].employeeId,
+                 "salary": data.employeeInformation[13].salary,
+                 "color": "#FF9E01"
+               }, {
+                 "id": data.employeeInformation[14].employeeId,
+                 "salary": data.employeeInformation[14].salary,
+                 "color": "#FCD202"
+               }, {
+                 "id": data.employeeInformation[15].employeeId,
+                 "salary": data.employeeInformation[15].salary,
+                 "color": "#F8FF01"
+               }, {
+                 "id": data.employeeInformation[16].employeeId,
+                 "salary": data.employeeInformation[16].salary,
+                 "color": "#B0DE09"
+               }, {
+                 "id": data.employeeInformation[17].employeeId,
+                 "salary": data.employeeInformation[17].salary,
+                 "color": "#04D215"
+               }, {
+                 "id": data.employeeInformation[18].employeeId,
+                 "salary": data.employeeInformation[18].salary,
+                 "color": "#0D8ECF"
+               }, {
+                 "id": data.employeeInformation[19].employeeId,
+                 "salary": data.employeeInformation[19].salary,
+                 "color": "#0D52D1"
+               }, {
+                 "id": data.employeeInformation[20].employeeId,
+                 "salary": data.employeeInformation[20].salary,
+                 "color": "#2A0CD0"
+               }, {
+                 "id": data.employeeInformation[21].employeeId,
+                 "salary": data.employeeInformation[21].salary,
+                 "color": "#8A0CCF"
+               }, {
+                 "id": data.employeeInformation[22].employeeId,
+                 "salary": data.employeeInformation[22].salary,
+                 "color": "#CD0D74"
+               },
+               
+               {
+                   "id": data.employeeInformation[23].employeeId,
+                   "salary": data.employeeInformation[23].salary,
+                   "color": "#FF6600"
+                 }, {
+                   "id": data.employeeInformation[24].employeeId,
+                   "salary": data.employeeInformation[24].salary,
+                   "color": "#FF9E01"
+                 }, {
+                   "id": data.employeeInformation[25].employeeId,
+                   "salary": data.employeeInformation[25].salary,
+                   "color": "#FCD202"
+                 }, {
+                   "id": data.employeeInformation[26].employeeId,
+                   "salary": data.employeeInformation[26].salary,
+                   "color": "#F8FF01"
+                 }, {
+                   "id": data.employeeInformation[27].employeeId,
+                   "salary": data.employeeInformation[27].salary,
+                   "color": "#B0DE09"
+                 }, {
+                   "id": data.employeeInformation[28].employeeId,
+                   "salary": data.employeeInformation[28].salary,
+                   "color": "#04D215"
+                 }, {
+                   "id": data.employeeInformation[29].employeeId,
+                   "salary": data.employeeInformation[29].salary,
+                   "color": "#0D8ECF"
+                 }, {
+                   "id": data.employeeInformation[30].employeeId,
+                   "salary": data.employeeInformation[30].salary,
+                   "color": "#0D52D1"
+                 }, {
+                   "id": data.employeeInformation[31].employeeId,
+                   "salary": data.employeeInformation[31].salary,
+                   "color": "#2A0CD0"
+                 }, {
+                   "id": data.employeeInformation[32].employeeId,
+                   "salary": data.employeeInformation[32].salary,
+                   "color": "#8A0CCF"
+                 }, {
+                   "id": data.employeeInformation[33].employeeId,
+                   "salary": data.employeeInformation[33].salary,
+                   "color": "#CD0D74"
+                 },
+                 
+                 
+                 
+                 {
+                     "id": data.employeeInformation[34].employeeId,
+                     "salary": data.employeeInformation[34].salary,
+                     "color": "#FF6600"
+                   }, {
+                     "id": data.employeeInformation[35].employeeId,
+                     "salary": data.employeeInformation[35].salary,
+                     "color": "#FF9E01"
+                   }, {
+                     "id": data.employeeInformation[36].employeeId,
+                     "salary": data.employeeInformation[36].salary,
+                     "color": "#FCD202"
+                   }, {
+                     "id": data.employeeInformation[37].employeeId,
+                     "salary": data.employeeInformation[37].salary,
+                     "color": "#F8FF01"
+                   }, {
+                     "id": data.employeeInformation[38].employeeId,
+                     "salary": data.employeeInformation[38].salary,
+                     "color": "#B0DE09"
+                   }, {
+                     "id": data.employeeInformation[39].employeeId,
+                     "salary": data.employeeInformation[39].salary,
+                     "color": "#04D215"
+                   }, {
+                     "id": data.employeeInformation[40].employeeId,
+                     "salary": data.employeeInformation[40].salary,
+                     "color": "#0D8ECF"
+                   }, {
+                     "id": data.employeeInformation[41].employeeId,
+                     "salary": data.employeeInformation[41].salary,
+                     "color": "#0D52D1"
+                   }, {
+                     "id": data.employeeInformation[42].employeeId,
+                     "salary": data.employeeInformation[42].salary,
+                     "color": "#2A0CD0"
+                   }, {
+                     "id": data.employeeInformation[43].employeeId,
+                     "salary": data.employeeInformation[43].salary,
+                     "color": "#8A0CCF"
+                   }, {
+                     "id": data.employeeInformation[44].employeeId,
+                     "salary": data.employeeInformation[44].salary,
+                     "color": "#CD0D74"
+                   },
+
+                   {
+                       "id": data.employeeInformation[45].employeeId,
+                       "salary": data.employeeInformation[45].salary,
+                       "color": "#FF6600"
+                     }, {
+                       "id": data.employeeInformation[46].employeeId,
+                       "salary": data.employeeInformation[46].salary,
+                       "color": "#FF9E01"
+                     }, {
+                       "id": data.employeeInformation[47].employeeId,
+                       "salary": data.employeeInformation[47].salary,
+                       "color": "#FCD202"
+                     }, {
+                       "id": data.employeeInformation[48].employeeId,
+                       "salary": data.employeeInformation[48].salary,
+                       "color": "#F8FF01"
+                     }, {
+                       "id": data.employeeInformation[49].employeeId,
+                       "salary": data.employeeInformation[49].salary,
+                       "color": "#B0DE09"
+                     }, {
+                       "id": data.employeeInformation[50].employeeId,
+                       "salary": data.employeeInformation[50].salary,
+                       "color": "#04D215"
+                     }, {
+                       "id": data.employeeInformation[51].employeeId,
+                       "salary": data.employeeInformation[51].salary,
+                       "color": "#0D8ECF"
+                     }, {
+                       "id": data.employeeInformation[52].employeeId,
+                       "salary": data.employeeInformation[52].salary,
+                       "color": "#0D52D1"
+                     }, {
+                       "id": data.employeeInformation[53].employeeId,
+                       "salary": data.employeeInformation[53].salary,
+                       "color": "#2A0CD0"
+                     }, {
+                       "id": data.employeeInformation[54].employeeId,
+                       "salary": data.employeeInformation[54].salary,
+                       "color": "#8A0CCF"
+                     }, {
+                       "id": data.employeeInformation[55].employeeId,
+                       "salary": data.employeeInformation[55].salary,
+                       "color": "#CD0D74"
+                     },
+                 
+                     {
+                         "id": data.employeeInformation[56].employeeId,
+                         "salary": data.employeeInformation[56].salary,
+                         "color": "#FF6600"
+                       }, {
+                         "id": data.employeeInformation[57].employeeId,
+                         "salary": data.employeeInformation[57].salary,
+                         "color": "#FF9E01"
+                       }, {
+                         "id": data.employeeInformation[58].employeeId,
+                         "salary": data.employeeInformation[58].salary,
+                         "color": "#FCD202"
+                       }, {
+                         "id": data.employeeInformation[59].employeeId,
+                         "salary": data.employeeInformation[59].salary,
+                         "color": "#F8FF01"
+                       }, {
+                         "id": data.employeeInformation[60].employeeId,
+                         "salary": data.employeeInformation[60].salary,
+                         "color": "#B0DE09"
+                       }, {
+                         "id": data.employeeInformation[61].employeeId,
+                         "salary": data.employeeInformation[61].salary,
+                         "color": "#04D215"
+                       }, {
+                         "id": data.employeeInformation[62].employeeId,
+                         "salary": data.employeeInformation[62].salary,
+                         "color": "#0D8ECF"
+                       }, {
+                         "id": data.employeeInformation[63].employeeId,
+                         "salary": data.employeeInformation[63].salary,
+                         "color": "#0D52D1"
+                       }, {
+                         "id": data.employeeInformation[64].employeeId,
+                         "salary": data.employeeInformation[64].salary,
+                         "color": "#2A0CD0"
+                       }, {
+                         "id": data.employeeInformation[65].employeeId,
+                         "salary": data.employeeInformation[65].salary,
+                         "color": "#8A0CCF"
+                       }, {
+                         "id": data.employeeInformation[66].employeeId,
+                         "salary": data.employeeInformation[66].salary,
+                         "color": "#CD0D74"
+                       },
+                       {
+                           "id": data.employeeInformation[67].employeeId,
+                           "salary": data.employeeInformation[67].salary,
+                           "color": "#FF6600"
+                         }, {
+                           "id": data.employeeInformation[68].employeeId,
+                           "salary": data.employeeInformation[68].salary,
+                           "color": "#FF9E01"
+                         }, {
+                           "id": data.employeeInformation[69].employeeId,
+                           "salary": data.employeeInformation[69].salary,
+                           "color": "#FCD202"
+                         }, {
+                           "id": data.employeeInformation[70].employeeId,
+                           "salary": data.employeeInformation[70].salary,
+                           "color": "#F8FF01"
+                         }, {
+                           "id": data.employeeInformation[71].employeeId,
+                           "salary": data.employeeInformation[71].salary,
+                           "color": "#B0DE09"
+                         }, {
+                           "id": data.employeeInformation[72].employeeId,
+                           "salary": data.employeeInformation[72].salary,
+                           "color": "#04D215"
+                         }, {
+                           "id": data.employeeInformation[73].employeeId,
+                           "salary": data.employeeInformation[73].salary,
+                           "color": "#0D8ECF"
+                         }, {
+                           "id": data.employeeInformation[74].employeeId,
+                           "salary": data.employeeInformation[74].salary,
+                           "color": "#0D52D1"
+                         }, {
+                           "id": data.employeeInformation[75].employeeId,
+                           "salary": data.employeeInformation[75].salary,
+                           "color": "#2A0CD0"
+                         }, {
+                           "id": data.employeeInformation[76].employeeId,
+                           "salary": data.employeeInformation[76].salary,
+                           "color": "#8A0CCF"
+                         }, {
+                           "id": data.employeeInformation[77].employeeId,
+                           "salary": data.employeeInformation[77].salary,
+                           "color": "#CD0D74"
+                         },
+                         
+                         {
+                             "id": data.employeeInformation[78].employeeId,
+                             "salary": data.employeeInformation[78].salary,
+                             "color": "#FF6600"
+                           }, {
+                             "id": data.employeeInformation[79].employeeId,
+                             "salary": data.employeeInformation[79].salary,
+                             "color": "#FF9E01"
+                           }, {
+                             "id": data.employeeInformation[80].employeeId,
+                             "salary": data.employeeInformation[80].salary,
+                             "color": "#FCD202"
+                           }, {
+                             "id": data.employeeInformation[81].employeeId,
+                             "salary": data.employeeInformation[81].salary,
+                             "color": "#F8FF01"
+                           }, {
+                             "id": data.employeeInformation[82].employeeId,
+                             "salary": data.employeeInformation[82].salary,
+                             "color": "#B0DE09"
+                           }, {
+                             "id": data.employeeInformation[83].employeeId,
+                             "salary": data.employeeInformation[83].salary,
+                             "color": "#04D215"
+                           }, {
+                             "id": data.employeeInformation[84].employeeId,
+                             "salary": data.employeeInformation[84].salary,
+                             "color": "#0D8ECF"
+                           }, {
+                             "id": data.employeeInformation[85].employeeId,
+                             "salary": data.employeeInformation[85].salary,
+                             "color": "#0D52D1"
+                           }, {
+                             "id": data.employeeInformation[86].employeeId,
+                             "salary": data.employeeInformation[86].salary,
+                             "color": "#2A0CD0"
+                           }, {
+                             "id": data.employeeInformation[87].employeeId,
+                             "salary": data.employeeInformation[87].salary,
+                             "color": "#8A0CCF"
+                           }, {
+                             "id": data.employeeInformation[88].employeeId,
+                             "salary": data.employeeInformation[88].salary,
+                             "color": "#CD0D74"
+                           },
+                           
+                           
+                           {
+                               "id": data.employeeInformation[89].employeeId,
+                               "salary": data.employeeInformation[89].salary,
+                               "color": "#FF6600"
+                             }, {
+                               "id": data.employeeInformation[90].employeeId,
+                               "salary": data.employeeInformation[90].salary,
+                               "color": "#FF9E01"
+                             }, {
+                               "id": data.employeeInformation[91].employeeId,
+                               "salary": data.employeeInformation[91].salary,
+                               "color": "#FCD202"
+                             }, {
+                               "id": data.employeeInformation[92].employeeId,
+                               "salary": data.employeeInformation[92].salary,
+                               "color": "#F8FF01"
+                             }, {
+                               "id": data.employeeInformation[93].employeeId,
+                               "salary": data.employeeInformation[93].salary,
+                               "color": "#B0DE09"
+                             }, {
+                               "id": data.employeeInformation[94].employeeId,
+                               "salary": data.employeeInformation[94].salary,
+                               "color": "#04D215"
+                             }, {
+                               "id": data.employeeInformation[95].employeeId,
+                               "salary": data.employeeInformation[95].salary,
+                               "color": "#0D8ECF"
+                             }, {
+                               "id": data.employeeInformation[96].employeeId,
+                               "salary": data.employeeInformation[96].salary,
+                               "color": "#0D52D1"
+                             }, {
+                               "id": data.employeeInformation[97].employeeId,
+                               "salary": data.employeeInformation[97].salary,
+                               "color": "#2A0CD0"
+                             }, {
+                               "id": data.employeeInformation[98].employeeId,
+                               "salary": data.employeeInformation[98].salary,
+                               "color": "#8A0CCF"
+                             }, {
+                               "id": data.employeeInformation[99].employeeId,
+                               "salary": data.employeeInformation[99].salary,
+                               "color": "#CD0D74"
+                             },
+                 
+                             
+                             {
+                                 "id": data.employeeInformation[100].employeeId,
+                                 "salary": data.employeeInformation[100].salary,
+                                 "color": "#FF6600"
+                               }, {
+                                 "id": data.employeeInformation[101].employeeId,
+                                 "salary": data.employeeInformation[101].salary,
+                                 "color": "#FF9E01"
+                               }, {
+                                 "id": data.employeeInformation[102].employeeId,
+                                 "salary": data.employeeInformation[102].salary,
+                                 "color": "#FCD202"
+                               }, {
+                                 "id": data.employeeInformation[103].employeeId,
+                                 "salary": data.employeeInformation[103].salary,
+                                 "color": "#F8FF01"
+                               }, {
+                                 "id": data.employeeInformation[104].employeeId,
+                                 "salary": data.employeeInformation[104].salary,
+                                 "color": "#B0DE09"
+                               }, {
+                                 "id": data.employeeInformation[105].employeeId,
+                                 "salary": data.employeeInformation[105].salary,
+                                 "color": "#04D215"
+                               }, {
+                                 "id": data.employeeInformation[106].employeeId,
+                                 "salary": data.employeeInformation[106].salary,
+                                 "color": "#0D8ECF"
+                               }
+               
+               
+               ],
+             
+             "valueAxes": [{
+               "axisAlpha": 0,
+               "position": "left",
+               "title": "Salary"
+             }],
+             "startDuration": 1,
+             "graphs": [{
+               "balloonText": "<b>[[category]]: [[value]]</b>",
+               "fillColorsField": "color",
+               "fillAlphas": 0.9,
+               "lineAlpha": 0.2,
+               "type": "column",
+               "valueField": "salary"
+             }],
+             "chartCursor": {
+               "categoryBalloonEnabled": false,
+               "cursorAlpha": 0,
+               "zoomable": false
+             },
+             "categoryField": "id",
+             "categoryAxis": {
+               "gridPosition": "start",
+               "title": "Id Of Employee",
+               "labelRotation": 45
+             },
+             "export": {
+               "enabled": true
+             }
+
+           });
+         
    }
 });
 
 
-var graph = AmCharts.makeChart("chartdiv", {
-  "type": "serial",
-  "theme": "light",
-  "marginRight": 70,
-  "dataProvider": [{
-    "country": "King Steven",
-    "salary": 24000,
-    "color": "#FF0F00"
-  }, {
-    "country": "Kochhar Neena",
-    "salary": 17000,
-    "color": "#FF6600"
-  }, {
-    "country": "De Haan Lex",
-    "salary": 17000,
-    "color": "#FF9E01"
-  }, {
-    "country": "Hunold Alexander",
-    "salary": 9000,
-    "color": "#FCD202"
-  }, {
-    "country": "Ernst Bruce",
-    "salary": 6000,
-    "color": "#F8FF01"
-  }, {
-    "country": "Austin David",
-    "salary": 4800,
-    "color": "#B0DE09"
-  }, {
-    "country": "Pataballa Valli",
-    "salary": 4800,
-    "color": "#04D215"
-  }, {
-    "country": "Lorentz Diana",
-    "salary": 4200,
-    "color": "#0D8ECF"
-  }, {
-    "country": "Greenberg Nancy",
-    "salary": 12000,
-    "color": "#0D52D1"
-  }, {
-    "country": "Faviet Daniel",
-    "salary": 9000,
-    "color": "#2A0CD0"
-  }, {
-    "country": "Chen John",
-    "salary": 8200,
-    "color": "#8A0CCF"
-  }, {
-    "country": "Sciarra Ismael",
-    "salary": 7700,
-    "color": "#CD0D74"
-  }],
-  "valueAxes": [{
-    "axisAlpha": 0,
-    "position": "left",
-    "title": "Salary"
-  }],
-  "startDuration": 1,
-  "graphs": [{
-    "balloonText": "<b>[[category]]: [[value]]</b>",
-    "fillColorsField": "color",
-    "fillAlphas": 0.9,
-    "lineAlpha": 0.2,
-    "type": "column",
-    "valueField": "salary"
-  }],
-  "chartCursor": {
-    "categoryBalloonEnabled": false,
-    "cursorAlpha": 0,
-    "zoomable": false
-  },
-  "categoryField": "country",
-  "categoryAxis": {
-    "gridPosition": "start",
-    "labelRotation": 45
-  },
-  "export": {
-    "enabled": true
-  }
 
-});
+
 
 
 </script>
