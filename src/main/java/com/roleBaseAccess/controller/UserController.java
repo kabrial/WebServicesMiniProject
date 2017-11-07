@@ -16,11 +16,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.roleBaseAccess.model.User;
 import com.roleBaseAccess.service.SecurityService;
+import com.roleBaseAccess.service.UserRoleDeleteService;
 import com.roleBaseAccess.service.UserService;
 import com.roleBaseAccess.validator.UserModifyPasswordValidator;
 import com.roleBaseAccess.validator.UserValidator;
 
 /**
+ * user controller to manage user
  * @author Kevin ABRIAL & Alexis Barthelemy
  *
  */
@@ -29,6 +31,9 @@ public class UserController {
     // Service
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private UserRoleDeleteService userRoleDeleteService;
 
     @Autowired
     private SecurityService securityService;
@@ -192,6 +197,49 @@ public class UserController {
         
         userService.saveModifyPassword(user, userCurrent.getId());
         
+        return "redirect:/logout";
+    }
+    
+    /**
+     * Get method to delete user.
+     * @param model
+     * @return String
+     */
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String displayDelete(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = ((UserDetails) authentication.getPrincipal()).getUsername();
+        
+        User user = userService.findByUsername(username);
+        model.addAttribute("userName",username);
+        model.addAttribute("userRole",user.getUserrole());       
+        model.addAttribute("theUser", user);
+        return "delete";
+    }
+    
+    /**
+     * delete user Post method.
+     * @param model
+     * @return String
+     */
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String displayDeleteUser(@ModelAttribute("theUser") User user, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = ((UserDetails) authentication.getPrincipal()).getUsername();
+        
+        User userCurrent = userService.findByUsername(username);
+        model.addAttribute("userName",username);
+        model.addAttribute("userRole",userCurrent.getUserrole());       
+        model.addAttribute("theUser", user);
+        
+        try {
+            userRoleDeleteService.deleteUserRoleByUserid(userCurrent.getId());
+            userRoleDeleteService.deleteUserById(userCurrent.getId());
+        }
+        catch (Exception e) {
+            return "redirect:/delete";
+        }
+          
         return "redirect:/logout";
     }
 

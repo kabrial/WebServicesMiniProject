@@ -13,6 +13,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+/**
+ * Model user
+ * @author Alexis BARTHELEMY & Kevin ABRIAL
+ *
+ */
 
 @Entity
 @Table(name = "user")
