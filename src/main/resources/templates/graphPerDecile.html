@@ -8,19 +8,21 @@
 
 <!-- Custom styles for this template -->
 <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+  <!-- Jquery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<!-- Styles -->
+<style>
+#chartdiv {
+	width	: 100%;
+	height	: 500px;
+}		
 
-<script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-    <style>
-    canvas{
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-    }
-    </style>
-    
-    <!-- Jquery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</style>
 </head>
 <body>
 
@@ -49,199 +51,96 @@
 	        </div>
 	      </nav>
     </header>
-	<div style="width:100%;">
-        <canvas id="canvas"></canvas>
-    </div>
-    <br>
-    <br>
     
-    <script>
-      
     
-        var getDataEmployee = function(i) {
-            $.ajax({
-                type: "GET",
-                url: '/api/dataEmployee',
-                cache:false,
-                dataType :'json',
-                success: function(data){
-                     //alert(data);   
-                     //alert(data.employeeInformation[0].employeeId);       
-                     //alert("ici"+data.employeeInformation[0].employeeId);
-                     //alert(data.employeeInformation[i].salary);
-                     return data.employeeInformation[i].salary;
-               }
-            });
-        };
-
-        var config = {
-            type: 'line',
-            data: {
-                labels: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206"],
-                datasets: [{
-                    label: "Salary per decile",
-                    fill: false,
-                    backgroundColor: window.chartColors.blue,
-                    borderColor: window.chartColors.blue,
-                    data: [
-                        getDataEmployee(0),
-                        getDataEmployee(1),
-                        getDataEmployee(2),
-                        getDataEmployee(3),
-                        getDataEmployee(4),
-                        getDataEmployee(5),
-                        getDataEmployee(6),
-                        getDataEmployee(7),
-                        getDataEmployee(8),
-                        getDataEmployee(9),
-                        getDataEmployee(10),
-                        getDataEmployee(11), 
-                        getDataEmployee(12), 
-                        getDataEmployee(13), 
-                        getDataEmployee(14), 
-                        getDataEmployee(15), 
-                        getDataEmployee(16), 
-                        getDataEmployee(17), 
-                        getDataEmployee(18), 
-                        getDataEmployee(19), 
-                        getDataEmployee(20),
-                        getDataEmployee(21), 
-                        getDataEmployee(22), 
-                        getDataEmployee(23), 
-                        getDataEmployee(24), 
-                        getDataEmployee(25), 
-                        getDataEmployee(26), 
-                        getDataEmployee(27), 
-                        getDataEmployee(28), 
-                        getDataEmployee(29), 
-                        getDataEmployee(30),
-                        getDataEmployee(31), 
-                        getDataEmployee(32), 
-                        getDataEmployee(33), 
-                        getDataEmployee(34), 
-                        getDataEmployee(35), 
-                        getDataEmployee(36), 
-                        getDataEmployee(37), 
-                        getDataEmployee(38), 
-                        getDataEmployee(39), 
-                        getDataEmployee(40),
-                        getDataEmployee(41), 
-                        getDataEmployee(42), 
-                        getDataEmployee(43), 
-                        getDataEmployee(44), 
-                        getDataEmployee(45), 
-                        getDataEmployee(46), 
-                        getDataEmployee(47), 
-                        getDataEmployee(48), 
-                        getDataEmployee(49), 
-                        getDataEmployee(50),
-                        getDataEmployee(51), 
-                        getDataEmployee(52), 
-                        getDataEmployee(53), 
-                        getDataEmployee(54), 
-                        getDataEmployee(55), 
-                        getDataEmployee(56), 
-                        getDataEmployee(57), 
-                        getDataEmployee(58), 
-                        getDataEmployee(59), 
-                        getDataEmployee(60),
-                        getDataEmployee(61), 
-                        getDataEmployee(62), 
-                        getDataEmployee(63), 
-                        getDataEmployee(64), 
-                        getDataEmployee(65), 
-                        getDataEmployee(66), 
-                        getDataEmployee(67), 
-                        getDataEmployee(68), 
-                        getDataEmployee(69), 
-                        getDataEmployee(70),
-                        getDataEmployee(71), 
-                        getDataEmployee(72), 
-                        getDataEmployee(73), 
-                        getDataEmployee(74), 
-                        getDataEmployee(75), 
-                        getDataEmployee(76), 
-                        getDataEmployee(77), 
-                        getDataEmployee(78), 
-                        getDataEmployee(79), 
-                        getDataEmployee(80),
-                        getDataEmployee(81), 
-                        getDataEmployee(82), 
-                        getDataEmployee(83), 
-                        getDataEmployee(84), 
-                        getDataEmployee(85), 
-                        getDataEmployee(86), 
-                        getDataEmployee(87), 
-                        getDataEmployee(88), 
-                        getDataEmployee(89), 
-                        getDataEmployee(90),
-                        getDataEmployee(91), 
-                        getDataEmployee(92), 
-                        getDataEmployee(93), 
-                        getDataEmployee(94), 
-                        getDataEmployee(95), 
-                        getDataEmployee(96), 
-                        getDataEmployee(97), 
-                        getDataEmployee(98), 
-                        getDataEmployee(99), 
-                        getDataEmployee(100),
-                        getDataEmployee(101), 
-                        getDataEmployee(102), 
-                        getDataEmployee(103), 
-                        getDataEmployee(104), 
-                        getDataEmployee(105), 
-                        getDataEmployee(106)
-                    ],
-                }]
-            },
-            options: {
-                responsive: true,
-                title:{
-                    display:true,
-                    text:'Chart.js Line Chart to draw the graph of employees.'
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                hover: {
-                    mode: 'nearest',
-                    intersect: true
-                },
-                scales: {
-                    xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Id Of Employee'
-                        }
-                    }],
-                    yAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Salary'
-                        },
-                        ticks: {
-                            min: 0,
-                            max: 26000,
-
-                            // forces step size to be 1000 units
-                            stepSize: 1000
-                        }
-                    }]
-                }
+    <div id="chartdiv"></div>		
+    
+    
+    <script type="text/javascript">
+    var chartData = generateChartData();
+    var chart = AmCharts.makeChart("chartdiv", {
+        "type": "serial",
+        "theme": "light",
+        "marginRight": 80,
+        "autoMarginOffset": 20,
+        "marginTop": 7,
+        "dataProvider": chartData,
+        "valueAxes": [{
+            "axisAlpha": 0.2,
+            "dashLength": 1,
+            "position": "left"
+        }],
+        "mouseWheelZoomEnabled": true,
+        "graphs": [{
+            "id": "g1",
+            "balloonText": "[[value]]",
+            "bullet": "round",
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "hideBulletsCount": 50,
+            "title": "red line",
+            "valueField": "salary",
+            "useLineColorForBulletBorder": true,
+            "balloon":{
+                "drop":true
             }
-        };
+        }],
+        "chartScrollbar": {
+            "autoGridCount": true,
+            "graph": "g1",
+            "scrollbarHeight": 40
+        },
+        "chartCursor": {
+           "limitToGraph":"g1"
+        },
+        "categoryField": "employeeId",
+        "categoryAxis": {
+            "parseDates": true,
+            "axisColor": "#DADADA",
+            "dashLength": 1,
+            "minorGridEnabled": true
+        },
+        "export": {
+            "enabled": true
+        }
+    });
 
-        window.onload = function() {
-            var ctx = document.getElementById("canvas").getContext("2d");
-            window.myLine = new Chart(ctx, config);
-        };
+    chart.addListener("rendered", zoomChart);
+    zoomChart();
 
-        
+    // this method is called when chart is first inited as we listen for "rendered" event
+    function zoomChart() {
+        // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+        chart.zoomToIndexes(chartData.length - 40, chartData.length - 1);
+    }
 
+
+    // generate some random data, quite different range
+
+    // generate some random data, quite different range
+    function generateChartData() {
+        var chartData = [];
+        var firstDate = new Date();
+        firstDate.setDate(firstDate.getDate() - 5);
+        var salary = 1200;
+        for (var i = 0; i < 1000; i++) {
+            // we create date objects here. In your data, you can have date strings
+            // and then set format of your dates using chart.dataDateFormat property,
+            // however when possible, use date objects, as this will speed up chart rendering.
+            var newDate = new Date(firstDate);
+            newDate.setDate(newDate.getDate() + i);
+            
+            salary += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+
+            chartData.push({
+                employeeId: newDate,
+                salary: salary
+            });
+        }
+        return chartData;
+    }
+    
+    
     </script>
-
 </body>
 </html>
