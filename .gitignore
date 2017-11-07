@@ -1,6 +1,7 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
 application.properties
+humanresources.sql
 ### STS ###
 .apt_generated
 .classpath
