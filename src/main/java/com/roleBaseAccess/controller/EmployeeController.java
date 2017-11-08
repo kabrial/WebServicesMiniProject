@@ -74,8 +74,8 @@ public class EmployeeController {
     @RequestMapping(value="/{EmployeeId}",  method={RequestMethod.GET})
     public String findEmployeeId(Model model, @PathVariable long EmployeeId){
         
-        Employee Employee = employeeService.findEmployee(EmployeeId);        
-        model.addAttribute("theEmployee", Employee);
+        Employee employee = employeeService.findEmployee(EmployeeId);        
+        model.addAttribute("theEmployee", employee);
         
         Iterable<Department> listDepartment = departmentService.findAllDepartments();
 
@@ -98,10 +98,10 @@ public class EmployeeController {
     }
     
     @RequestMapping(value="/{EmployeeId}",  method={RequestMethod.POST})
-    public String updEmployee(Model model,@PathVariable String EmployeeId,@ModelAttribute Employee Employee){
+    public String updEmployee(Model model,@PathVariable String EmployeeId,@ModelAttribute Employee employee){
 
-        model.addAttribute("theEmployee", Employee);      
-        employeeService.saveEmployee(Employee);
+        model.addAttribute("theEmployee", employee);      
+        employeeService.saveEmployee(employee);
         
         return "redirect:/employee";
     }

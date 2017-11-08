@@ -6,7 +6,6 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 
@@ -34,9 +33,9 @@ public class Employee implements Serializable {
 	@Column(name="FIRST_NAME", length=20)
 	private String firstName;
 
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name="HIRE_DATE", nullable=false)
-	private Date hireDate;
+	private String hireDate;
 
 	@Column(name="LAST_NAME", nullable=false, length=25)
 	private String lastName;
@@ -102,11 +101,11 @@ public class Employee implements Serializable {
 		this.firstName = firstName;
 	}
 
-	public Date getHireDate() {
+	public String getHireDate() {
 		return this.hireDate;
 	}
 
-	public void setHireDate(Date hireDate) {
+	public void setHireDate(String hireDate) {
 		this.hireDate = hireDate;
 	}
 
