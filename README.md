@@ -4,7 +4,7 @@
 
 [![N|Solid](http://rubenjgarcia.es/wp-content/uploads/2016/09/springboot.png)](https://projects.spring.io/spring-boot/)
 
-Ce mini projet de l'UE Web Services ("Applications Distribuees") a pour but de creer avec Spring, des graphiques à l'aide de la librairies amcharts.com, de manipuler les differentes tables de la base de donnee et de creer des comptes username/password a l'aide de Spring Security.
+Ce mini projet de l'UE du Master 2 Données et Systèmes Connectés en Web Services ("Applications Distribuees") a pour but de creer avec Spring, des graphiques à l'aide de la librairies amcharts.com, de manipuler les differentes tables de la base de donnee et de creer des comptes username/password a l'aide de Spring Security.
 
 ## Import the Database
 
