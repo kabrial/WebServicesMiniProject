@@ -67,6 +67,9 @@ Dans le projet nous avons mis en place des validations de formulaires, notamment
 * Pour le "Sign Out dans la barre du menu", on verifie si les deux passwords correspondent aux mêmes, sinon on affiche un message d'erreur en rouge sur la page.
 * Pour modifier le password, "Your profil dans la barre du menu and on Update button", on verifie si les deux mots de passes correspondent l'un à l'autre, sinon on affiche un message d'erreur en rouge sur la page.
 
+## Les pages html
+
+Toutes les pages html se trouvent dans src/main/resources/templates.
 
 ## Authors
 
