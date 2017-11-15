@@ -37,7 +37,7 @@ L'utilisateur avec le username:  usersales et password: useraccounting correspon
 
 ### En tant que user connecte
 
-Il existe différentes fonctionnalités pour ce projet : 
+Il existe les fonctionnalités suivantes pour ce projet : 
 
 * L'Admin peut modifier le role des utilisateurs de son choix. (Sauf lui-même). "Profil dans la barre du menu".
 * Chaque utilisateur peut modifier son password. "Your Profil dans la barre du menu".
@@ -51,16 +51,18 @@ Il existe différentes fonctionnalités pour ce projet :
 
 ### En tant que user non connecte
 
-Il existe deux fonctionnalites : 
+Il existe les fonctionnalites suivantes pour ce projet : 
 
 * L'utilisateur peut se connecter via "Sign in dans la barre de menu."
 * L'utilisateur peut s'enregistrer un nouveau compte via "Sign out dans la barre de menu." Lors de la creation et de la validation de celui-ci, il y a un autologin qui se cree et l'utilisateur est connecte sans avoir a retaper les informations du nouveau compte qu'il vient tout juste de crée.
+* L'acces a la description du site ce fait via "Description dans la barre du menu".
+* L'acces a une eventuel aide sur le site ce fait via "Help dans la barre du menu".
 
 ## Validation de formulaire 
 
 Dans le projet nous avons mis en place des validations de formulaires, notamment : 
 
-* Pour le "Sign in" si le username et password ne correspond pas aux données, on affiche un message en rouge sur la page.
-* Pour le "Sign Out", si le username n'est pas compris entre 6 et 32 caracteres, on affiche un message d'erreur en rouge sur la page.
-* Pour le "Sign Out", on verifie si les deux passwords correspondent aux mêmes, sinon on affiche un message d'erreur en rouge sur la page.
-* Pour modifier le password, "Your profil and on Update button", on verifie si les deux mots de passes correspondent l'un à l'autre, sinon on affiche un message d'erreur en rouge sur la page.
+* Pour le "Sign in dans la barre du menu" si le username et password ne correspond pas aux données, on affiche un message en rouge sur la page.
+* Pour le "Sign Out dans la barre du menu", si le username n'est pas compris entre 6 et 32 caracteres, on affiche un message d'erreur en rouge sur la page.
+* Pour le "Sign Out dans la barre du menu", on verifie si les deux passwords correspondent aux mêmes, sinon on affiche un message d'erreur en rouge sur la page.
+* Pour modifier le password, "Your profil dans la barre du menu and on Update button", on verifie si les deux mots de passes correspondent l'un à l'autre, sinon on affiche un message d'erreur en rouge sur la page.
