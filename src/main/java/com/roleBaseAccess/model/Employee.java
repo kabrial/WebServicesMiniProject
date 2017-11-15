@@ -6,7 +6,6 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 
 /**
@@ -60,11 +59,6 @@ public class Employee implements Serializable {
 	@JsonIgnore
 	@JoinColumn(name="JOB_ID", nullable=false)
 	private Job job;
-
-	//bi-directional many-to-one association to JobHistory
-	@OneToMany(mappedBy="employee")
-	@JsonIgnore
-	private List<JobHistory> jobHistories;
 
 	public Employee() {
 	}
@@ -156,27 +150,4 @@ public class Employee implements Serializable {
 	public void setJob(Job job) {
 		this.job = job;
 	}
-
-	public List<JobHistory> getJobHistories() {
-		return this.jobHistories;
-	}
-
-	public void setJobHistories(List<JobHistory> jobHistories) {
-		this.jobHistories = jobHistories;
-	}
-
-	public JobHistory addJobHistory(JobHistory jobHistory) {
-		getJobHistories().add(jobHistory);
-		jobHistory.setEmployee(this);
-
-		return jobHistory;
-	}
-
-	public JobHistory removeJobHistory(JobHistory jobHistory) {
-		getJobHistories().remove(jobHistory);
-		jobHistory.setEmployee(null);
-
-		return jobHistory;
-	}
-
 }

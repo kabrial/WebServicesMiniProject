@@ -42,11 +42,6 @@ public class Department implements Serializable {
 	@JsonIgnore
 	private List<Employee> employees;
 
-	//bi-directional many-to-one association to JobHistory
-	@OneToMany(mappedBy="department")
-	@JsonIgnore
-	private List<JobHistory> jobHistories;
-
 	public Department() {
 	}
 
@@ -102,28 +97,6 @@ public class Department implements Serializable {
 		employee.setDepartment(null);
 
 		return employee;
-	}
-
-	public List<JobHistory> getJobHistories() {
-		return this.jobHistories;
-	}
-
-	public void setJobHistories(List<JobHistory> jobHistories) {
-		this.jobHistories = jobHistories;
-	}
-
-	public JobHistory addJobHistory(JobHistory jobHistory) {
-		getJobHistories().add(jobHistory);
-		jobHistory.setDepartment(this);
-
-		return jobHistory;
-	}
-
-	public JobHistory removeJobHistory(JobHistory jobHistory) {
-		getJobHistories().remove(jobHistory);
-		jobHistory.setDepartment(null);
-
-		return jobHistory;
 	}
 
 }
