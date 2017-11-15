@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" th:href="@{../images/ico.png}">
 
-    <title>Update Country</title>
+    <title>Update Location</title>
 
      <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
 	<header>
 	      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-	        <a class="navbar-brand" th:href="@{/}" >Home : <span th:text="*{userName}"></span>, Your role : <span th:text="*{userRole}"></span></a>>
+	        <a class="navbar-brand" th:href="@{/}" >Home : <span th:text="*{userName}"></span>, Your role : <span th:text="*{userRole}"></span></a>
 	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 	          <span class="navbar-toggler-icon"></span>
 	        </button>
@@ -29,12 +29,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" th:href="@{/#ToBottom}">Help</a>
-            </li>
-	        <li class="nav-item">
-	          <a class="nav-link" th:href="@{/country}">Country</a>
-	        </li>
-	         <li class="nav-item">
-              <a class="nav-link" th:href="@{/profil}">Profil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" th:href="@{/logout}">Logout</a>

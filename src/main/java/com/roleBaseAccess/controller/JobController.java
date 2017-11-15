@@ -71,6 +71,13 @@ public class JobController {
         
         Job job = JobService.findJob(jobId);        
         model.addAttribute("theJob", job);
+        
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = ((UserDetails) authentication.getPrincipal()).getUsername();
+        
+        User user = userService.findByUsername(username);
+        model.addAttribute("userName",username);
+        model.addAttribute("userRole",user.getUserrole());
        
         
         return "updateJob";
