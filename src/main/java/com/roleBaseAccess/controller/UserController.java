@@ -93,7 +93,7 @@ public class UserController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
         
-        return "redirect:/userAdmin";
+        return "redirect:/home";
     }
 
     /**
@@ -118,8 +118,8 @@ public class UserController {
      * @param model
      * @return String
      */
-    @RequestMapping(value = {"/", "/userAdmin"}, method = RequestMethod.GET)
-    public String userAdmin(Model model) {
+    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    public String dispatch(Model model) {
        
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = ((UserDetails) authentication.getPrincipal()).getUsername();

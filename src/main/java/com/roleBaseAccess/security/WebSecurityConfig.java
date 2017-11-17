@@ -26,10 +26,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/resources/**", "/registration").permitAll()
+                    .antMatchers("/resources/**", "/registration", "/login").permitAll()
                     .anyRequest()
                     .authenticated()
-                    .antMatchers("/**", "/userAdmin", "/graph", "/graph/**", "/api/dataEmployee").hasAnyAuthority("ADMIN")
+                    .antMatchers("/**", "/userAdmin", "/graph", "/graph/**", "/api/dataEmployee").hasAuthority("ADMIN")
                     .antMatchers("/**", "/userSalesAndFinance").hasAuthority("SALES")
                     .antMatchers("/**", "/userAccounting").hasAuthority("ACCOUNTING")
                     .and()
