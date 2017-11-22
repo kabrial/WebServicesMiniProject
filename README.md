@@ -43,7 +43,7 @@ Il existe les fonctionnalités suivantes pour ce projet :
 * Chaque utilisateur peut modifier son password. "Your Profil dans la barre du menu".
 * Chaque utilisateur peut supprimer son compte (définitivement) avec une pop-up de confirmation. "Delete Account dans la barre du menu".
 * Chaque utilisateur peut se deconnecter a tout moment. "Logout dans la barre du menu".
-* Les differents accés/role sités dans la partie "Users and Roles in the Database" a été implémenter. "Country, ..., Job dans la barre du menu".
+* Les differents accés/role sités dans la partie "Users and Roles in the Database" a été implémenter. "Country, ..., Job dans la barre du menu" avec l'accès du chemin suivant: "\country, ..., \job".
 * Le graphique "Graph per decile" dans la barre du menu seulement visible par l'admin.
 * Le graphique "Graph" dans la barre du menu seulement visible par l'admin.
 * L'acces a la description du site ce fait via "Description dans la barre du menu".
