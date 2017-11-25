@@ -10,7 +10,7 @@ Ce mini projet de l'UE du Master 2 Données et Systèmes Connectés en Web Servi
 
 Tout d'abord, il faut importer la database "humanresources.sql" dans votre base de donnee. Ce fichier se situe dans src/main/resources.
 
-Ensuite, vous devez modifier le mot de passe de la base de donnee qui se trouve dans "application.properties." (et éventuellement, le user: par défaut, il est mis a "root").
+Ensuite, vous devez modifier le mot de passe de la base de donnee qui se trouve dans "application.properties." (et éventuellement, le user: par défaut, il est mis a "root"). Une fois, lancer, il faut acceder a "http://localhost:8080/", cela redirige a "http://localhost:8080/login", pour se connecter.
 
 ### Spring Security
 
@@ -39,15 +39,16 @@ L'utilisateur avec le username:  usersales et password: useraccounting correspon
 
 Il existe les fonctionnalités suivantes pour ce projet : 
 
-* L'Admin peut modifier le role des utilisateurs de son choix. (Sauf lui-même). "Profil dans la barre du menu".
-* Chaque utilisateur peut modifier son password. "Your Profil dans la barre du menu".
-* Chaque utilisateur peut supprimer son compte (définitivement) avec une pop-up de confirmation. "Delete Account dans la barre du menu".
-* Chaque utilisateur peut se deconnecter a tout moment. "Logout dans la barre du menu".
-* Les differents accés/role sités dans la partie "Users and Roles in the Database" a été implémenter. "Country, ..., Job dans la barre du menu" avec l'accès du chemin suivant: "\country, ..., \job".
-* Le graphique "Graph per decile" dans la barre du menu seulement visible par l'admin.
-* Le graphique "Graph" dans la barre du menu seulement visible par l'admin.
-* L'acces a la description du site ce fait via "Description dans la barre du menu".
-* L'acces a une eventuel aide sur le site ce fait via "Help dans la barre du menu".
+* L'Admin peut modifier le role des utilisateurs de son choix. (Sauf lui-même). "Profil dans la barre du menu". :warning: seulement l'admin a accès a cette fonctionnalite.
+* Chaque utilisateur peut modifier son password. "Your Profil dans la barre du menu". :warning: seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
+* Chaque utilisateur peut supprimer son compte (définitivement) avec une pop-up de confirmation. "Delete Account dans la barre du menu". :warning: seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
+* Chaque utilisateur peut se deconnecter a tout moment. "Logout dans la barre du menu". :warning: seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
+* Les differents accés/role sités dans la partie "Users and Roles in the Database" a été implémenter. "Country, ..., Job dans la barre du menu" avec l'accès du chemin suivant: "/country, ..., /job". par exemple, cela redirige vers les URL suivantes: "http://localhost:8080/country", "http://localhost:8080/department", "http://localhost:8080/employee", "http://localhost:8080/location", "http://localhost:8080/region", "http://localhost:8080/job" :warning: Les droits d'acces sont ceux definies dans le sujet du projet.
+* Update toutes parties de la base de donnee, :warning: il suffit d'avoir un utilisateur ayant les droits qui sont definies dans le sujet du projet, il suffit d'aller au URL, cité ci-dessus, puis d'un clic d'aller sur le bouton Update, de rempir le formulaire et de valider via le boutton.
+* Le graphique "Graph per decile" dans la barre du menu seulement visible par l'admin. Par example: "http://localhost:8080/graph/decile", :warning: seulement l'admin a accès au graphique.
+* Le graphique "Graph" dans la barre du menu seulement visible par l'admin. Par example: "http://localhost:8080/graph", , :warning: seulement l'admin a accès au graphique.
+* L'acces a la description du site ce fait via "Description dans la barre du menu".  :white_check_mark: Accessibilité , a tout le monde, même au utilisateur non connecté.
+* L'acces a une eventuel aide sur le site ce fait via "Help dans la barre du menu".  :white_check_mark: Accessibilité , a tout le monde, même au utilisateur non connecté.
 
 ### En tant que user non connecte
 
@@ -62,7 +63,7 @@ Il existe les fonctionnalites suivantes pour ce projet :
 
 Dans le projet nous avons mis en place des validations de formulaires, notamment : 
 
-* Pour le "Sign in dans la barre du menu" si le username et password ne correspond pas aux données, on affiche un message en rouge sur la page.
+* Pour le "Sign in dans la barre du menu" si le username et password ne correspond pas aux données, on affiche un message en rouge sur la page. 
 * Pour le "Sign Out dans la barre du menu", si le username n'est pas compris entre 6 et 32 caracteres, on affiche un message d'erreur en rouge sur la page.
 * Pour le "Sign Out dans la barre du menu", on verifie si les deux passwords correspondent aux mêmes, sinon on affiche un message d'erreur en rouge sur la page.
 * Pour modifier le password, "Your profil dans la barre du menu and on Update button", on verifie si les deux mots de passes correspondent l'un à l'autre, sinon on affiche un message d'erreur en rouge sur la page.
@@ -70,6 +71,15 @@ Dans le projet nous avons mis en place des validations de formulaires, notamment
 ## Les pages html
 
 Toutes les pages html se trouvent dans src/main/resources/templates.
+
+## Swagger pour la documentation API Rest
+
+Nous avons rajouter une documentation API Rest qui est disponible "http://localhost:8080/swagger-ui.html" seulement en étant connectés, cependant, seul l'admin peut executer la requete dans la documentation car il y a que l'admin qui a les droits de faire des requetes sur cette URL. (Si on test avec les 2 autres types d'utilisateurs, il aura un message d'erreur: "Access Denied")
+
+## Conclusion & Respect des consignes
+
+Ce projet nous a permis de revoir Spring.
+Nous avons respecter toutes les regles definies dans le sujet (nous pouvons modifier chaque partie de la base de donnée), nous avons même rajouter de nouvelles fonctionnalités qui ne sont pas décrites dans le sujet du projet mais qui sont décrites (Voir les parties: Fonctionnalités -> En tant que user connecte et Validation de formulaire.)
 
 ## Authors
 
