@@ -39,14 +39,14 @@ L'utilisateur avec le username:  usersales et password: useraccounting correspon
 
 Il existe les fonctionnalités suivantes pour ce projet : 
 
-* L'Admin peut modifier le role des utilisateurs de son choix. (Sauf lui-même). "Profil dans la barre du menu". :warning: seulement l'admin a accès a cette fonctionnalite.
-* Chaque utilisateur peut modifier son password. "Your Profil dans la barre du menu". :warning: seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
-* Chaque utilisateur peut supprimer son compte (définitivement) avec une pop-up de confirmation. "Delete Account dans la barre du menu". :warning: seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
-* Chaque utilisateur peut se deconnecter a tout moment. "Logout dans la barre du menu". :warning: seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
-* Les differents accés/role sités dans la partie "Users and Roles in the Database" a été implémenter. "Country, ..., Job dans la barre du menu" avec l'accès du chemin suivant: "/country, ..., /job". par exemple, cela redirige vers les URL suivantes: "http://localhost:8080/country", "http://localhost:8080/department", "http://localhost:8080/employee", "http://localhost:8080/location", "http://localhost:8080/region", "http://localhost:8080/job" :warning: Les droits d'acces sont ceux definies dans le sujet du projet.
-* Update toutes parties de la base de donnee, :warning: il suffit d'avoir un utilisateur ayant les droits qui sont definies dans le sujet du projet, il suffit d'aller au URL, cité ci-dessus, puis d'un clic d'aller sur le bouton Update, de rempir le formulaire et de valider via le boutton.
-* Le graphique "Graph per decile" dans la barre du menu seulement visible par l'admin. Par example: "http://localhost:8080/graph/decile", :warning: seulement l'admin a accès au graphique.
-* Le graphique "Graph" dans la barre du menu seulement visible par l'admin. Par example: "http://localhost:8080/graph", , :warning: seulement l'admin a accès au graphique.
+* L'Admin peut modifier le role des utilisateurs de son choix. (Sauf lui-même). "Profil dans la barre du menu". :warning: Seulement l'admin a accès a cette fonctionnalite.
+* Chaque utilisateur peut modifier son password. "Your Profil dans la barre du menu". :warning: Seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
+* Chaque utilisateur peut supprimer son compte (définitivement) avec une pop-up de confirmation. "Delete Account dans la barre du menu". :warning: Seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
+* Chaque utilisateur peut se deconnecter a tout moment. "Logout dans la barre du menu". :warning: Seulement a l'utilisateur courant connecté a accès a cette fonctionnalite.
+* Les differents accés/role sités dans la partie "Users and Roles in the Database" a été implémenter. "Country, ..., Job dans la barre du menu" avec l'accès du chemin suivant: "/country, ..., /job". par exemple, cela redirige vers les URL suivantes: "http://localhost:8080/country", "http://localhost:8080/department", "http://localhost:8080/employee", "http://localhost:8080/location", "http://localhost:8080/region", "http://localhost:8080/job" :warning: Les droits d'acces sont ceux definies dans le sujet du projet qui est dans la partie Users and Roles in the Database de ce document.
+* Update toutes parties de la base de donnee, il suffit d'avoir un utilisateur ayant les droits qui sont definies dans le sujet du projet, il suffit d'aller au URL, cité ci-dessus, puis d'un clic d'aller sur le bouton Update, de rempir le formulaire et de valider via le boutton. :warning: Les droits d'acces sont ceux definies dans le sujet du projet qui est dans la partie Users and Roles in the Database de ce document.
+* Le graphique "Graph per decile" dans la barre du menu seulement visible par l'admin. Par example: "http://localhost:8080/graph/decile", :warning: Seulement l'admin a accès au graphique.
+* Le graphique "Graph" dans la barre du menu seulement visible par l'admin. Par example: "http://localhost:8080/graph", , :warning: Seulement l'admin a accès au graphique.
 * L'acces a la description du site ce fait via "Description dans la barre du menu".  :white_check_mark: Accessibilité , a tout le monde, même au utilisateur non connecté.
 * L'acces a une eventuel aide sur le site ce fait via "Help dans la barre du menu".  :white_check_mark: Accessibilité , a tout le monde, même au utilisateur non connecté.
 
