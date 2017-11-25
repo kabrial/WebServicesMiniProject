@@ -79,7 +79,7 @@ Nous avons rajouter une documentation API Rest qui est disponible "http://localh
 ## Conclusion & Respect des consignes
 
 Ce projet nous a permis de revoir Spring.
-Nous avons respecter toutes les regles definies dans le sujet (nous pouvons modifier chaque partie de la base de donnée), nous avons même rajouter de nouvelles fonctionnalités qui ne sont pas décrites dans le sujet du projet mais qui sont décrites (Voir les parties: Fonctionnalités -> En tant que user connecte et Validation de formulaire.)
+Nous avons respecter toutes les regles definies dans le sujet (nous pouvons modifier chaque partie de la base de donnée), nous avons même rajouter de nouvelles fonctionnalités qui ne sont pas décrites dans le sujet du projet mais qui sont décrites dans les parties (Fonctionnalités -> En tant que user connecte et Validation de formulaire).
 
 ## Authors
 
