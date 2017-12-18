@@ -74,7 +74,7 @@ Toutes les pages html se trouvent dans src/main/resources/templates.
 
 ## Swagger pour la documentation API Rest
 
-Nous avons rajouter une documentation API Rest qui est disponible "http://localhost:8080/swagger-ui.html" seulement en étant connectés, cependant, :warning: Seul l'admin peut executer la requete dans la documentation car il y a que l'admin qui a les droits de faire des requetes sur cette URL. :warning: (Si on test avec les 2 autres types d'utilisateurs, il aura un message d'erreur: "Access Denied")
+Nous avons rajouter une documentation API Rest qui est disponible "http://localhost:8080/swagger-ui.html" seulement en étant connectés, cependant, :warning: Seul l'admin peut executer la requete dans la documentation car il y a que l'admin qui a les droits de faire des requetes sur cette URL. :warning: (Si on test avec les 2 autres types d'utilisateurs, il aura un message d'erreur: "Access Denied"). Pour les url suivantes : http://localhost:8080/api/dataEmployee et http://localhost:8080/api/dataEmployeeAsc, nous avons deux requetes séparer car nous voulions avoir deux résultats différents pour le per decile et le graph normale.
 
 ## Conclusion & Respect des consignes
 
