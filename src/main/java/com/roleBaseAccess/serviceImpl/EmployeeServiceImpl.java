@@ -71,4 +71,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return employeeGraphSalaryNameRepository.findIdAndSalary();
     }
+    
+    /**
+     * search salary and id Desc
+     */
+    @Override
+    public List<EmployeeGraphSalaryName> findIdAndSalaryAsc() {
+
+        return employeeGraphSalaryNameRepository.findIdAndSalaryAsc();
+    }
 }

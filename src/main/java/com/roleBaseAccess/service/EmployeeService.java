@@ -19,4 +19,6 @@ public interface EmployeeService {
     void saveEmployee(Employee employee);
     
     List<EmployeeGraphSalaryName> findIdAndSalary();
+    
+    List<EmployeeGraphSalaryName> findIdAndSalaryAsc();
 }

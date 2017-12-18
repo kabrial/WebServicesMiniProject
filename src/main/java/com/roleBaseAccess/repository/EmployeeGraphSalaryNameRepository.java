@@ -19,5 +19,8 @@ public interface EmployeeGraphSalaryNameRepository extends PagingAndSortingRepos
   
     @Query(value = "SELECT EMPLOYEE_ID, salary FROM employees ", nativeQuery = true)
     List<EmployeeGraphSalaryName> findIdAndSalary();
+    
+    @Query(value = "SELECT EMPLOYEE_ID, salary FROM employees ORDER BY salary ASC", nativeQuery = true)
+    List<EmployeeGraphSalaryName> findIdAndSalaryAsc();
 
 }

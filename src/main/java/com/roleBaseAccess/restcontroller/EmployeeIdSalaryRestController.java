@@ -65,4 +65,31 @@ public class EmployeeIdSalaryRestController {
         return map;
     }
 
+    
+    /**
+     * Methode to return information employee (Id and the salary)
+     * @return JSON
+     */
+    @RequestMapping(value = "/api/dataEmployeeAsc", method = RequestMethod.GET, produces = "application/json")
+    public Map<String, Object> displayEmployeeJsonAsc() {
+        
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = ((UserDetails) authentication.getPrincipal()).getUsername();
+        
+        User user = userService.findByUsername(username);
+
+        if ( user.getUserrole().equals(SALES) || user.getUserrole().equals(ACCOUNTING)) {
+            HashMap<String, Object> mapError = new HashMap<String, Object>();
+            mapError.put("AccessDenied", "AccessDenied");
+            return mapError;
+        }
+
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        
+        List<EmployeeGraphSalaryName> listEmployee = employeeService.findIdAndSalaryAsc();
+
+        map.put("employeeInformation", listEmployee);
+        
+        return map;
+    }
 }
